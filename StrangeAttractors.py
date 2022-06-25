@@ -75,9 +75,12 @@ def twoPointsLorenzAttractor():
             {"Convection Rate": x, "Horizontal Temperature Variation": y, "Vertical Temperature Variation": z,
              "time": time, "group": group})
         fig = px.scatter_3d(df, x="Convection Rate", y="Horizontal Temperature Variation", z="Vertical Temperature "
-                                                                                             "Variation",
-                            animation_frame="time", animation_group="group", range_x=[-max(x), max(x)],
-                            range_y=[-max(y), max(y)], range_z=[-max(z), max(z)], color="group")
+                            "Variation", animation_frame="time", animation_group="group", color="group")
+        fig.update_layout(scene=dict(
+            xaxis=dict(range=[-max(x) * 1.5, max(x) * 1.5], ),
+            yaxis=dict(range=[-max(y) * 1.5, max(y) * 1.5], ),
+            zaxis=dict(range=[-max(z) * 1.5, max(z) * 1.5], ), ),
+        )
         fig.show()
     except BaseException:
         print("Invalid input")
@@ -154,8 +157,12 @@ def twoPointsRosslerAttractor():
         df = pd.DataFrame({"x": x, "y": y, "z": z,
                            "time": time, "group": group})
         fig = px.scatter_3d(df, x="x", y="y", z="z",
-                            animation_frame="time", animation_group="group", range_x=[-max(x), max(x)],
-                            range_y=[-max(y), max(y)], range_z=[-max(z), max(z)], color="group")
+                            animation_frame="time", animation_group="group", color="group")
+        fig.update_layout(scene=dict(
+            xaxis=dict(range=[-max(x) * 1.5, max(x) * 1.5], ),
+            yaxis=dict(range=[-max(y) * 1.5, max(y) * 1.5], ),
+            zaxis=dict(range=[-max(z) * 1.5, max(z) * 1.5], ), ),
+        )
         fig.show()
     except BaseException:
         print("Invalid input")
