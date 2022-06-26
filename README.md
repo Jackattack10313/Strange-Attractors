@@ -3,3 +3,18 @@ Quick and dirty python code to display 2 types of strange attractors. I decided 
 
 ![alt text](https://media.discordapp.net/attachments/975043937666490400/990382687728582696/Lorenz.png)
 ![alt text](https://cdn.discordapp.com/attachments/975043937666490400/990382688059928648/Rossler.png)
+
+**Dependencies:**
+- Pandas
+- Plotly
+
+How to download dependencies:
+1. Open up cmd
+2. Enter:
+      - python -m pip install -U pip
+      - python -m pip install pandas
+      - python -m pip install plotly
+
+How to run:
+1. Navigate to where you have .py files installed (using cd & path)
+2. Enter: py -3 StrangeAttractors.py
